@@ -3,8 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-image_path = 'C:\Bijan\Codes\Github\Digital-Image-Processing\Contrast Stretching\sky.jpg'
-image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+image_path = 'C:\Bijan\Codes\Github\Digital-Image-Processing\images\sky.jpg'
+image = cv2.imread(image_path, cv2.COLOR_BGR2RGB)
 
 if image is None:
     print("Error: Image not found. Please check the image path.")
@@ -35,7 +35,7 @@ watermarked_image = cv2.addWeighted(negative_image, 1, watermark, 0.3, 0)
 fig, axes = plt.subplots(2, 2, figsize=(12, 10))
 
 
-axes[0, 0].imshow(image, cmap='gray')
+axes[0, 0].imshow(cv2.cvtColor(cv2.imread(image_path), cv2.COLOR_BGR2RGB))
 axes[0, 0].set_title("Original Image")
 axes[0, 0].axis('off')
 
