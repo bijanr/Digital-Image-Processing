@@ -7,7 +7,7 @@ image_path = r"C:\Bijan\Codes\Github\Digital-Image-Processing\Practice\ref\nigas
 image = cv.imread(image_path, cv.COLOR_BGR2RGB)
 
 #find the negative of the image
-negative = 255 - image
+negative = cv.bitwise_not(image)
 
 plt.figure(figsize=(10,10))
 plt.subplot(1,2,1)
